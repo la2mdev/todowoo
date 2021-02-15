@@ -44,8 +44,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=150, blank=True)
     start_date = models.DateTimeField(default=timezone.now)
     about = models.TextField(_('talk about you'), max_length=500, blank=True)
+    is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=False)
 
     objects = CustomUserManager()
 
